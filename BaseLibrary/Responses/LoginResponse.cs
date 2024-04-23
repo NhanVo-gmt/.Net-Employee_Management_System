@@ -6,7 +6,5 @@ using System.Threading.Tasks;
 
 namespace BaseLibrary.Responses
 {
-    internal class LoginResponse
-    {
-    }
+    public record LoginResponse (bool Flag, string Message = null!, string Token = null!, string RefreshToken = null!);
 }

@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 namespace BaseLibrary.DTOs
 {
-    internal class Register
+    public class Register : AccountBase
     {
+        [Required]
+        [MinLength(5)]
+        [MaxLength(100)] 
+        public string? FullName { get; set; }
+
+        [DataType(DataType.Password)]
+        [Compare(nameof(Password))]
+        [Required]
+        public string? ConfirmPassword { get; set; }
     }
 }
